@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Supplier = () => {
-  return <div>Supplier</div>;
+  return <div className="main">Supplier</div>;
 };
 
 export default Supplier;

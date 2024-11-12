@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Cashier = () => {
-  return <div>Cashier</div>;
+  return <div className="main">Cashier</div>;
 };
 
 export default Cashier;

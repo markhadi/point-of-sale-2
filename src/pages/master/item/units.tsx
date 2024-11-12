@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Units = () => {
-  return <div>Units</div>;
+  return <div className="main">Units</div>;
 };
 
 export default Units;

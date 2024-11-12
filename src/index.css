@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -58,12 +59,19 @@
     --chart-5: 340 75% 55%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .active-link {
+    @apply bg-[#E2E8F0] outline-[1.5px] outline-[#CBD5E1] outline-offset-0 rounded-[15px] text-[#1E293B];
   }
 }
 
@@ -80,6 +88,9 @@
 
 .header {
   grid-area: header;
+  position: fixed;
+  width: 100%;
+  height: 62px;
 }
 
 .sidebar {
@@ -88,4 +99,5 @@
 
 .main {
   grid-area: main;
+  padding: 20px;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserManager = () => {
-  return <div>UserManager</div>;
+  return <div className="main">UserManager</div>;
 };
 
 export default UserManager;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MasterItem = () => {
-  return <div>MasterItem</div>;
+  return <div className="main">MasterItem</div>;
 };
 
 export default MasterItem;
