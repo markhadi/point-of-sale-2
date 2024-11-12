@@ -8,6 +8,7 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        nunito: ['Nunito Sans', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
