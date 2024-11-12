@@ -1,4 +1,5 @@
-import { createContext, useContext, ReactNode, useState } from 'react';
+import { User } from '@/types/user';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 /**
  * Interface defining the shape of authentication context
@@ -9,7 +10,8 @@ import { createContext, useContext, ReactNode, useState } from 'react';
  */
 interface AuthContextType {
   isAuthenticated: boolean;
-  login: () => void;
+  user: User | null;
+  login: (userData: User) => void;
   logout: () => void;
 }
 
@@ -21,24 +23,36 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
  * @param {Object} props - Component props
  * @param {ReactNode} props.children - Child components
  */
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [user, setUser] = useState<User | null>({
+    id: '1',
+    name: 'John Doe',
+    role: 'Administrator',
+  });
 
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
+  const login = (userData: User) => {
+    setIsAuthenticated(true);
+    setUser(userData);
+  };
 
-  return <AuthContext.Provider value={{ isAuthenticated, login, logout }}>{children}</AuthContext.Provider>;
-}
+  const logout = () => {
+    setIsAuthenticated(false);
+    setUser(null);
+  };
+
+  return <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>{children}</AuthContext.Provider>;
+};
 
 /**
  * Custom hook to access authentication context
  * @returns {AuthContextType} Authentication context value
  * @throws {Error} If used outside of AuthProvider
  */
-export function useAuth() {
+export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-}
+};
