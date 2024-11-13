@@ -101,4 +101,5 @@
   grid-area: main;
   padding: 20px;
   background-color: #fafafa;
+  min-height: min-content;
 }

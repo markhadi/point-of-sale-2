@@ -4,6 +4,7 @@
 
 import Card from './Card';
 import { inventoryCards } from '@/data/dashboard';
+import { ChartDailyReceiveSpending, ChartYearlyReceiveSpending } from './Chart';
 
 /**
  * Inventory component displays inventory-specific dashboard metrics
@@ -12,13 +13,17 @@ import { inventoryCards } from '@/data/dashboard';
  */
 const Inventory = () => {
   return (
-    <div className="flex gap-7 flex-wrap">
-      {inventoryCards.map((card, index) => (
-        <Card
-          key={index}
-          {...card}
-        />
-      ))}
+    <div className="space-y-5">
+      <div className="flex gap-7 flex-wrap">
+        {inventoryCards.map((card, index) => (
+          <Card
+            key={index}
+            {...card}
+          />
+        ))}
+      </div>
+      <ChartYearlyReceiveSpending />
+      <ChartDailyReceiveSpending />
     </div>
   );
 };

@@ -30,7 +30,7 @@ const boxIcons = {
  */
 const Card = ({ title, value, trend, type }: CardData) => {
   return (
-    <div className="flex flex-grow flex-col gap-[34px] px-5 py-[15px] bg-white rounded-[16px]">
+    <div className="flex flex-grow flex-col gap-[34px] px-5 py-[15px] bg-white rounded-[16px] shadow-md">
       {/* Card Header with Title, Value and Icon */}
       <div className="h-[72px] flex justify-between items-center">
         <div className="space-y-3">

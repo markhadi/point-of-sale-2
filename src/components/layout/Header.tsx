@@ -65,7 +65,7 @@ const Header = () => {
   const pageTitle = getMasterItemTitle(location.pathname);
 
   return (
-    <header className="header flex items-center px-12 bg-[#1E293B]">
+    <header className="header flex items-center px-12 bg-[#1E293B] z-50">
       <Link
         key={'/dashboard'}
         to={'/dashboard'}

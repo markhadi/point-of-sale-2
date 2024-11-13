@@ -4,6 +4,7 @@
 
 import Card from './Card';
 import { generalCards } from '@/data/dashboard';
+import { ChartGeneral } from './Chart';
 
 /**
  * General component displays overall dashboard metrics using cards
@@ -12,13 +13,16 @@ import { generalCards } from '@/data/dashboard';
  */
 const General = () => {
   return (
-    <div className="flex gap-7 flex-wrap">
-      {generalCards.map((card, index) => (
-        <Card
-          key={index}
-          {...card}
-        />
-      ))}
+    <div className="space-y-5">
+      <div className="flex gap-7 flex-wrap">
+        {generalCards.map((card, index) => (
+          <Card
+            key={index}
+            {...card}
+          />
+        ))}
+      </div>
+      <ChartGeneral />
     </div>
   );
 };

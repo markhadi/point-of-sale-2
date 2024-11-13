@@ -4,6 +4,7 @@
 
 import Card from './Card';
 import { cashierCards } from '@/data/dashboard';
+import { ChartDailySellingCashier, ChartYearlySellingCashier } from './Chart';
 
 /**
  * Cashier component displays cashier-specific dashboard metrics
@@ -12,13 +13,17 @@ import { cashierCards } from '@/data/dashboard';
  */
 const Cashier = () => {
   return (
-    <div className="flex gap-7 flex-wrap">
-      {cashierCards.map((card, index) => (
-        <Card
-          key={index}
-          {...card}
-        />
-      ))}
+    <div className="space-y-5">
+      <div className="flex gap-7 flex-wrap">
+        {cashierCards.map((card, index) => (
+          <Card
+            key={index}
+            {...card}
+          />
+        ))}
+      </div>
+      <ChartYearlySellingCashier />
+      <ChartDailySellingCashier />
     </div>
   );
 };
