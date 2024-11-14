@@ -13,8 +13,8 @@ import { ChartGeneral } from './Chart';
  */
 const General = () => {
   return (
-    <div className="space-y-5">
-      <div className="flex gap-7 flex-wrap">
+    <div className="space-y-4 sm:space-y-5">
+      <div className="flex gap-4 sm:gap-7 flex-wrap">
         {generalCards.map((card, index) => (
           <Card
             key={index}

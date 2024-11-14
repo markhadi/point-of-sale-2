@@ -52,7 +52,7 @@ const UserProfile = () => {
             <span className="text-[#94A3B8] font-inter font-normal text-[14px] leading-[18px] hidden sm:block">{user.role}</span>
           </div>
           {/* Dropdown Arrow */}
-          <ChevronDown className={`text-[#64748B] h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown className={`text-[#64748B] h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
         </div>
       </DropdownMenuTrigger>
 

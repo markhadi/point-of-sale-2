@@ -21,10 +21,10 @@ const chartConfig: ChartConfig = {
 export const BaseChart = ({ title, data, dataKey, xAxisKey }: ChartProps) => {
   return (
     <Card className="max-h-[444px] h-full shadow-md rounded-[16px]">
-      <CardHeader className="pb-16 pt-9 pl-12">
-        <CardTitle className="font-nunito font-bold text-[24px] leading-[20px] text-[#202224] tracking-normal">{title}</CardTitle>
+      <CardHeader className="pb-6 pt-6 sm:pb-16 sm:pt-9 ">
+        <CardTitle className="font-nunito font-bold text-[18px] sm:text-[24px] leading-[20px] text-[#202224] tracking-normal">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="pr-12 pl-3">
+      <CardContent className="p-0 md:pr-12 md:pl-3">
         <ChartContainer
           className="max-h-[200px] w-full"
           config={chartConfig}

@@ -4,7 +4,7 @@ import { getMasterItemTitle } from './utils';
 import { MenuButton } from './components/MenuButton';
 import { Logo } from './components/Logo';
 import { useScrollLock } from './hooks/useScrollLock';
-import UserProfile from '../UserProfile';
+import UserProfile from './components/UserProfile';
 
 const Header = ({ isSidebarOpen, onToggleSidebar }: HeaderProps) => {
   const location = useLocation();

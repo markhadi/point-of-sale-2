@@ -30,27 +30,27 @@ const boxIcons = {
  */
 const Card = ({ title, value, trend, type }: CardData) => {
   return (
-    <div className="flex flex-grow flex-col gap-[34px] px-5 py-[15px] bg-white rounded-[16px] shadow-md">
+    <div className="flex flex-grow flex-col gap-1 sm:gap-[34px] px-5 py-[15px] bg-white rounded-[16px] shadow-md min-w-[248px]">
       {/* Card Header with Title, Value and Icon */}
       <div className="h-[72px] flex justify-between items-center">
-        <div className="space-y-3">
-          <span className="text-[16px] text-[#202224] font-nunito font-semibold leading-[22px]">{title}</span>
-          <h1 className="text-[28px] text-[#202224] font-nunito font-bold leading-[38px] tracking-[1px]">{value}</h1>
+        <div className="space-y-0 sm:space-y-3">
+          <span className="text-[14px] sm:text-[16px] text-[#202224] font-nunito font-semibold leading-[22px]">{title}</span>
+          <h1 className="text-[20px] sm:text-[28px] text-[#202224] font-nunito font-bold leading-[38px] tracking-[1px]">{value}</h1>
         </div>
         <img
           src={boxIcons[type]}
           alt={`${type} icon`}
-          className="w-[72px] h-[72px]"
+          className="w-[48px] h-[48px] sm:w-[72px] sm:h-[72px]"
         />
       </div>
       {/* Trend Indicator */}
-      <div className="flex gap-6">
+      <div className="flex gap-2 sm:gap-6">
         <Icon
           height={24}
           color={trend.isUp ? '#00B69B' : '#FF7878'}
           icon={`icon-park-outline:trending-${trend.isUp ? 'up' : 'down'}`}
         />
-        <p className="text-[#606060] font-nunito font-semibold text-[16px] leading-[22px]">
+        <p className="text-[#606060] font-nunito font-semibold text-[14px] sm:text-[16px] leading-[22px]">
           <span className={trend.isUp ? 'text-[#00B69B]' : 'text-[#FF7878]'}>{trend.value} </span>
           {trend.text}
         </p>

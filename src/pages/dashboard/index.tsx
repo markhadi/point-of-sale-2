@@ -49,7 +49,7 @@ const Dashboard = () => {
           value={selectedYear}
           onValueChange={setSelectedYear}
         >
-          <SelectTrigger className="w-[180px] absolute right-0 top-0">
+          <SelectTrigger className="w-max lg:w-[180px] absolute right-0 top-0">
             <SelectValue placeholder="Select year" />
           </SelectTrigger>
           <SelectContent>
