@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { loginSchema, type LoginSchema } from '@/lib/schemas/auth';
 import bgLogin from '@/assets/images/bg-login.png';
 import logo from '@/assets/images/logo-login.png';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Styles object containing Tailwind CSS classes for Login page components
@@ -41,6 +42,8 @@ const styles = {
  * Handles user authentication through a form interface
  */
 const Login = () => {
+  const navigate = useNavigate();
+
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -51,6 +54,7 @@ const Login = () => {
 
   const onSubmit = (values: LoginSchema) => {
     console.log(values);
+    navigate('/dashboard');
   };
 
   return (
