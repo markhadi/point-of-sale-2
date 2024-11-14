@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { ChevronDown, LogOut, User as UserIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * UserProfile component displays user information and provides a dropdown menu for user-related actions
@@ -13,6 +14,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
  * @returns {JSX.Element | null} Returns the UserProfile component or null if no user is authenticated
  */
 const UserProfile = () => {
+  const navigate = useNavigate();
   const { user, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -69,7 +71,9 @@ const UserProfile = () => {
         <DropdownMenuSeparator />
         <DropdownMenuItem
           className="text-red-600 focus:text-red-600 focus:bg-red-100"
-          onClick={logout}
+          onClick={() => {
+            navigate('/login');
+          }}
         >
           <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>
