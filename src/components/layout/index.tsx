@@ -1,31 +1,23 @@
-/**
- * @file Main layout component that provides the application's base structure
- */
-
 import { Outlet } from 'react-router-dom';
 import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
+import { useSidebar } from './hooks/useSidebar';
 
-/**
- * Layout component that wraps the main application content
- * Provides consistent structure with header, sidebar, and main content area
- *
- * @component
- * @returns {JSX.Element} The Layout component containing:
- *  - Header: Top navigation bar with logo and user profile
- *  - Sidebar: Navigation menu
- *  - Outlet: Dynamic content area for child routes
- */
+const SM_BREAKPOINT = 640;
+
 export const Layout = () => {
+  const { isOpen, toggle, close } = useSidebar(SM_BREAKPOINT);
+
   return (
     <main className="container-layout">
-      {/* Top navigation bar */}
-      <Header />
-
-      {/* Side navigation menu */}
-      <Sidebar />
-
-      {/* Dynamic content area rendered by child routes */}
+      <Header
+        isSidebarOpen={isOpen}
+        onToggleSidebar={toggle}
+      />
+      <Sidebar
+        isOpen={isOpen}
+        onClose={close}
+      />
       <Outlet />
     </main>
   );
