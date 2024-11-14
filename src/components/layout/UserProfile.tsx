@@ -41,13 +41,13 @@ const UserProfile = () => {
   return (
     <DropdownMenu onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
-        <div className="flex gap-2 items-center cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-colors outline-none">
+        <div className="flex gap-1 sm:gap-2 items-center cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-colors outline-none">
           {/* User Avatar with Initial */}
           <div className={`${getRoleColor(user.role)} h-[34px] w-[34px] rounded-full grid place-content-center text-[#1E293B] text-[16px] font-bold font-inter`}>{getInitial(user.name)}</div>
           {/* User Info */}
           <div className="flex flex-col">
-            <span className="text-[#F8FAFC] font-inter font-medium text-[16px] leading-[19px] text-left">{user.name}</span>
-            <span className="text-[#94A3B8] font-inter font-normal text-[14px] leading-[18px]">{user.role}</span>
+            <span className="text-[#F8FAFC] font-inter font-medium text-[16px] leading-[19px] text-left hidden sm:block">{user.name}</span>
+            <span className="text-[#94A3B8] font-inter font-normal text-[14px] leading-[18px] hidden sm:block">{user.role}</span>
           </div>
           {/* Dropdown Arrow */}
           <ChevronDown className={`text-[#64748B] h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />

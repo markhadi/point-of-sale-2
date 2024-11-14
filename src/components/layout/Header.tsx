@@ -65,10 +65,10 @@ const Header = () => {
   const pageTitle = getMasterItemTitle(location.pathname);
 
   return (
-    <header className="header flex items-center px-12 bg-[#1E293B] z-50">
+    <header className="header flex items-center px-6 sm:px-12 bg-[#1E293B] z-50">
       <Link
-        key={'/dashboard'}
         to={'/dashboard'}
+        className="flex-shrink-0"
       >
         <img
           src={logo}
@@ -76,8 +76,8 @@ const Header = () => {
           className="h-[49px]"
         />
       </Link>
-      <div className="flex-grow h-full flex items-center justify-between">
-        <h1 className="text-[#F8FAFC] font-inter text-[20px] leading-[28px] font-bold ml-5">{pageTitle}</h1>
+      <div className="flex-grow h-full flex items-center justify-end sm:justify-between">
+        <h1 className="text-[#F8FAFC] font-inter text-[20px] leading-[28px] font-bold ml-5 hidden sm:block">{pageTitle}</h1>
         <UserProfile />
       </div>
     </header>
