@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
  */
 const UserProfile = () => {
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   if (!user) return null;

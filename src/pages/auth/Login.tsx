@@ -53,6 +53,7 @@ const Login = () => {
   });
 
   const onSubmit = (values: LoginSchema) => {
+    console.log(values);
     navigate('/dashboard');
   };
 
