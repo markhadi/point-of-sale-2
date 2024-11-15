@@ -1,16 +1,10 @@
-/**
- * @file General dashboard component displaying overall metrics
- */
-
 import Card from './Card';
 import { generalCards } from '@/data/dashboard';
 import { ChartGeneral } from './Chart';
+import { TableLatestTransactions } from './Table/components/TableLatestTransactions';
+import { TablePopularProducts } from './Table/components/TablePopularProducts';
+import { TableStockReceiptOrIssue } from './Table/components/TableStockReceiptOrIssue';
 
-/**
- * General component displays overall dashboard metrics using cards
- * @component
- * @returns {JSX.Element} A collection of general metric cards
- */
 const General = () => {
   return (
     <div className="space-y-4 sm:space-y-5">
@@ -23,6 +17,11 @@ const General = () => {
         ))}
       </div>
       <ChartGeneral />
+      <div className="grid grid-cols-1 gap-5 2xl:grid-cols-3">
+        <TableLatestTransactions />
+        <TablePopularProducts />
+        <TableStockReceiptOrIssue />
+      </div>
     </div>
   );
 };
